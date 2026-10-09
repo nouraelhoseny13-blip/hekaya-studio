@@ -1,6 +1,7 @@
 ﻿import { useState, type FormEvent } from "react";
 import { ArrowLeft, ArrowRight, CheckCircle2, Copy, ShieldCheck, Wallet } from "lucide-react";
 import "./Checkout.css";
+import { supabase } from "./lib/supabase";
 
 const walletNumber = "01093198772";
 const whatsappNumber = "201093198772";
@@ -20,8 +21,23 @@ function Checkout() {
     }
   };
 
-  const submitOrder = (event: FormEvent<HTMLFormElement>) => {
+  const submitOrder = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const { error } = await supabase.from("orders").insert({
+      customer_name: customerName.trim(),
+      customer_phone: customerPhone.trim(),
+      transaction_id: transactionId.trim() || null,
+      product: "study_planner",
+      amount: 79,
+      status: "pending",
+    });
+
+    if (error) {
+      console.error("Order submission failed:", error.message);
+      alert("حصلت مشكلة في تسجيل الطلب. حاولي مرة تانية.");
+      return;
+    }
 
     const message = [
       "مرحبًا HEKAYA STUDIO 🤍",
@@ -33,7 +49,7 @@ function Checkout() {
       "السعر: 79 جنيه",
       `رقم عملية التحويل: ${transactionId || "لم يُضف بعد"}`,
       "",
-      "برجاء مراجعة التحويل وتأكيد الطلب بعد وصول المبلغ."
+      "برجاء مراجعة التحويل وتأكيد الطلب بعد وصول المبلغ.",
     ].join("\n");
 
     window.location.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
@@ -121,3 +137,4 @@ function Checkout() {
 }
 
 export default Checkout;
+
