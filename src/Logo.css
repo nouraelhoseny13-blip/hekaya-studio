@@ -1,0 +1,80 @@
+.hekaya-logo {
+display: inline-flex;
+align-items: center;
+gap: 11px;
+color: #241a1b;
+text-decoration: none;
+width: fit-content;
+}
+
+.hekaya-logo-symbol {
+display: grid;
+place-items: center;
+width: 48px;
+height: 48px;
+border: 1px solid #812d3b;
+border-radius: 50%;
+color: #812d3b;
+font-family: "Playfair Display", serif;
+font-size: 34px;
+font-weight: 500;
+line-height: 1;
+letter-spacing: -3px;
+padding-right: 3px;
+transition: background 0.3s ease, color 0.3s ease;
+}
+
+.hekaya-logo:hover .hekaya-logo-symbol {
+background: #812d3b;
+color: #f8f5f0;
+}
+
+.hekaya-logo-wordmark {
+display: flex;
+flex-direction: column;
+gap: 4px;
+}
+
+.hekaya-logo-name {
+font-family: "Playfair Display", serif;
+font-size: 21px;
+font-weight: 600;
+letter-spacing: 2px;
+line-height: 1;
+}
+
+.hekaya-logo-studio {
+color: #812d3b;
+font-size: 9px;
+font-weight: 600;
+letter-spacing: 3px;
+}
+
+.hekaya-logo-light {
+color: #f8f5f0;
+}
+
+.hekaya-logo-light .hekaya-logo-symbol {
+border-color: #f8f5f0;
+color: #f8f5f0;
+}
+
+.hekaya-logo-light .hekaya-logo-studio {
+color: #d9a9b0;
+}
+
+@media (max-width: 390px) {
+.hekaya-logo {
+gap: 8px;
+}
+
+.hekaya-logo-symbol {
+width: 42px;
+height: 42px;
+font-size: 30px;
+}
+
+.hekaya-logo-name {
+font-size: 18px;
+}
+}
