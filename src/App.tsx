@@ -19,28 +19,28 @@ import Checkout from "./Checkout";
 const products = [
   {
     number: "01",
-    category: "READY TO EXPLORE",
+    category: "مجموعة الدراسة · 001",
     name: "حكاية إنجازك",
-    description: "A little more clarity, every day.",
-    price: "Printable Study Planner · PDF",
+    description: "وضوح أكتر، وخطوة أقرب لهدفك كل يوم.",
+    price: "بلانر دراسي قابل للطباعة · PDF",
     style: "product-card-rose",
     mark: "حكاية",
   },
   {
     number: "02",
-    category: "FOR YOUR NEXT CHAPTER",
+    category: "خطوتك المهنية الجاية",
     name: "The Career Kit",
-    description: "Make your next move with confidence.",
-    price: "CV & career templates",
+    description: "ابدئي خطوتك المهنية بثقة.",
+    price: "قوالب السيرة الذاتية والتوظيف",
     style: "product-card-cream",
     mark: "NEXT",
   },
   {
     number: "03",
-    category: "FOR YOUR BIG IDEAS",
+    category: "لأفكارك الكبيرة",
     name: "The Brand Starter",
-    description: "Give your little idea a beautiful start.",
-    price: "Social media templates",
+    description: "امنحي فكرتك بداية تليق بيها.",
+    price: "قوالب السوشيال ميديا",
     style: "product-card-burgundy",
     mark: "STUDIO",
   },
@@ -53,7 +53,6 @@ function App() {
   if (window.location.pathname === "/showcase") return <Showcase />;
   if (window.location.pathname === "/product") return <Product />;
   if (window.location.pathname === "/checkout") return <Checkout />;
-  if (window.location.pathname === "/checkout") return <Checkout />;
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -61,28 +60,28 @@ function App() {
     <main>
       <div className="announcement">
         <Sparkles size={13} />
-        <span>A little idea can become a beautiful thing.</span>
+        <span>كل فكرة صغيرة ممكن تبقى حكاية جميلة.</span>
       </div>
 
       <header className="site-header">
         <Logo />
 
         <nav className={menuOpen ? "navigation navigation-open" : "navigation"}>
-          <a href="#story" onClick={closeMenu}>Our story</a>
-          <a href="#collections" onClick={closeMenu}>Collections</a>
-          <a href="#journal" onClick={closeMenu}>The journal</a>
+          <a href="#story" onClick={closeMenu}>حكايتنا</a>
+          <a href="#collections" onClick={closeMenu}>المجموعات</a>
+          <a href="#journal" onClick={closeMenu}>كلمة ليكي</a>
           <a className="nav-mobile-link" href="#collections" onClick={closeMenu}>
-            Explore the studio <ArrowUpRight size={15} />
+            اكتشفي المجموعة <ArrowUpRight size={15} />
           </a>
         </nav>
 
         <a className="header-cta" href="#collections">
-          Explore the studio <ArrowUpRight size={15} />
+          اكتشفي المجموعة <ArrowUpRight size={15} />
         </a>
 
         <button
           className="menu-toggle"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-label={menuOpen ? "إغلاق القائمة" : "فتح القائمة"}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen(!menuOpen)}
         >
@@ -99,7 +98,7 @@ function App() {
             transition={{ duration: 0.7 }}
           >
             <span className="eyebrow-line" />
-            A CREATIVE LITTLE CORNER
+            THE STUDY COLLECTION · 001
           </motion.div>
 
           <motion.h1
@@ -107,13 +106,10 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.12 }}
           >
-            Your ideas
+            حكاية
             <br />
-            deserve a
-            <br />
-            <span>beautiful</span>
-            <br />
-            beginning<span className="period">.</span>
+            <span>إنجازك</span>
+            <span className="period">.</span>
           </motion.h1>
 
           <motion.p
@@ -122,8 +118,9 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.28 }}
           >
-            Thoughtfully designed digital goods for your everyday,
-            your ambitions, and every little dream in between.
+            خطوة صغيرة كل يوم، إنجاز أكبر كل مرة.
+            بلانر دراسي رقمي يساعدك تنظّمي وقتك،
+            وتتابعي أهدافك، وتخططي لأيامك بهدوء ووضوح.
           </motion.p>
 
           <motion.div
@@ -132,15 +129,15 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
-            <a className="button-primary" href="#collections">
-              Find your little something <ArrowRight size={17} />
+            <a className="button-primary" href="/product">
+              اكتشفي البلانر <ArrowRight size={17} />
             </a>
-            <a className="text-link" href="#story">Get to know us</a>
+            <a className="text-link" href="#story">اعرفي حكايتنا</a>
           </motion.div>
 
           <div className="hero-note">
             <span className="note-star">✳</span>
-            <span>Made with intention. Designed for you.</span>
+            <span>متصمم بعناية، عشان كل خطوة تفرق.</span>
           </div>
         </div>
 
@@ -156,13 +153,15 @@ function App() {
 
           <div className="art-caption art-caption-top">
             <span>FIG. 001</span>
-            <span>THE ART OF BEGINNING</span>
+            <span>بداية حكاية جديدة</span>
           </div>
 
           <div className="art-paper paper-back">
-            <span className="paper-mini">A NOTE TO SELF</span>
+            <span className="paper-mini">ملاحظة لنفسي</span>
             <span className="paper-scribble">
-              make room<br />for wonder.
+              خدي خطوة
+              <br />
+              ورا خطوة.
             </span>
           </div>
 
@@ -173,19 +172,21 @@ function App() {
             </div>
             <div className="paper-decoration">h.</div>
             <p className="paper-title">
-              A beautiful<br /><i>beginning.</i>
+              حكاية
+              <br />
+              <i>إنجازك.</i>
             </p>
             <span className="paper-bottom">
-              YOUR NEXT CHAPTER STARTS HERE
+              كل خطوة بداية لحكاية
             </span>
           </div>
 
           <div className="art-flower flower-one">✳</div>
           <div className="art-flower flower-two">✳</div>
-          <div className="art-stamp">A LITTLE<br />MORE YOU</div>
+          <div className="art-stamp">خطوة<br />كل يوم</div>
 
           <div className="art-caption art-caption-bottom">
-            <span>CREATED FOR YOUR NEXT CHAPTER</span>
+            <span>مصمّم عشان رحلتك</span>
             <span>01 / 03</span>
           </div>
         </motion.div>
@@ -193,44 +194,43 @@ function App() {
         <a
           href="#story"
           className="scroll-indicator"
-          aria-label="Scroll to our story"
+          aria-label="انتقلي إلى حكايتنا"
         >
           <ArrowDown size={16} />
         </a>
       </section>
 
-      <section className="ticker" aria-label="Our philosophy">
+      <section className="ticker" aria-label="رسالتنا">
         <div className="ticker-track">
           {Array.from({ length: 4 }, (_, index) => (
             <span className="ticker-item" key={index}>
-              LITTLE IDEAS, LOVELY THINGS <span>✳</span>{" "}
-              MADE FOR YOUR NEXT CHAPTER <span>✳</span>
+              كل خطوة ليها حكاية <span>✳</span>{" "}
+              أحلامك تستاهل البداية <span>✳</span>
             </span>
           ))}
         </div>
       </section>
 
       <section className="story-section" id="story">
-        <div className="section-kicker">A LITTLE ABOUT US</div>
+        <div className="section-kicker">حكايتنا</div>
         <div className="story-content">
           <h2>
-            Every big thing
+            كل إنجاز كبير
             <br />
-            starts with a <i>little</i> idea.
+            بيبدأ <i>بخطوة صغيرة.</i>
           </h2>
 
           <div className="story-description">
             <p>
-              Hekaya means story. And we believe every person, every dream,
-              and every new beginning deserves its own beautiful one.
+              حكاية مش مجرد اسم؛ دي فكرتنا إن كل شخص وكل حلم
+              وكل بداية جديدة تستحق حكاية جميلة تخصّها.
             </p>
             <p>
-              We create thoughtful digital tools that make your days feel
-              lighter, your ideas feel closer, and your next chapter feel
-              a little more possible.
+              بنصمم أدوات رقمية تساعدك تنظّمي يومك،
+              وتقربي من أهدافك، وتخلي البداية أسهل وأوضح.
             </p>
             <a className="underlined-link" href="#collections">
-              This is where your story begins <ArrowRight size={16} />
+              ابدئي حكايتك من هنا <ArrowRight size={16} />
             </a>
           </div>
         </div>
@@ -239,13 +239,13 @@ function App() {
       <section className="collections-section" id="collections">
         <div className="collections-heading">
           <div>
-            <div className="section-kicker">MADE FOR YOUR MOMENTS</div>
+            <div className="section-kicker">متصممة للحظاتك</div>
             <h2>
-              A little something <i>for you.</i>
+              حاجة صغيرة <i>عشانك.</i>
             </h2>
           </div>
           <span className="collection-count">
-            THE FIRST COLLECTION · 001
+            المجموعة الأولى · 001
           </span>
         </div>
 
@@ -273,7 +273,7 @@ function App() {
                   <span className="mockup-overline">HEKAYA STUDIO</span>
                   <span className="mockup-mark">{product.mark}</span>
                   <span className="mockup-bottom">
-                    A LITTLE MORE INTENTIONAL
+                    كل خطوة ليها حكاية
                   </span>
                 </div>
                 <span className="product-art-label">{product.category}</span>
@@ -293,7 +293,7 @@ function App() {
                       href="/product"
                       onClick={(event) => event.stopPropagation()}
                     >
-                      Explore the planner <ArrowRight size={16} />
+                      اكتشفي البلانر <ArrowRight size={16} />
                     </a>
                   )}
                 </div>
@@ -305,22 +305,22 @@ function App() {
         </div>
 
         <p className="collection-note">
-          Our first study planner is ready for your next chapter. More
-          thoughtful digital collections are in the making.
+          أول بلانر دراسي من حكاية جاهز يساعدك تنظّمي أيامك.
+          ودي مجرد البداية، ولسه في حكايات وأدوات رقمية جاية.
         </p>
       </section>
 
       <section className="journal-section" id="journal">
         <div className="journal-decoration">“</div>
-        <div className="section-kicker">A THOUGHT TO KEEP</div>
+        <div className="section-kicker">كلمة ليكي</div>
         <h2>
-          You don’t have to have it all figured out
+          مش لازم تكون كل حاجة واضحة
           <br />
-          to <i>begin.</i>
+          عشان <i>تبدأي.</i>
         </h2>
-        <p>One small step is still a story worth telling.</p>
+        <p>حتى أصغر خطوة تستاهل تتحكي.</p>
         <a className="button-light" href="#home">
-          Back to the beginning <ArrowUpRight size={16} />
+          ارجعي للبداية <ArrowUpRight size={16} />
         </a>
       </section>
 
@@ -329,7 +329,7 @@ function App() {
           <Logo />
         </div>
         <span className="footer-center">
-          A little idea can become a beautiful thing.
+          كل فكرة صغيرة ممكن تبقى حكاية جميلة.
         </span>
         <span className="footer-copy">© 2026 HEKAYA STUDIO</span>
       </footer>
@@ -338,8 +338,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
